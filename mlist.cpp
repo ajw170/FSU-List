@@ -5,6 +5,8 @@
 
 
     Dynamic Random Test of List<>
+ 
+    Testing messages.
 
     Driver program testing List<T> for pointer errors and memory
     leaks by fully exercising all List<T> and
