@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		989981431E25A0E30015A67A /* flist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981411E25A0E30015A67A /* flist.cpp */; };
+		989981601E25BC0F0015A67A /* mlist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981421E25A0E30015A67A /* mlist.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9899811C1E25A0090015A67A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		9899815B1E25BBF50015A67A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9899811E1E25A0090015A67A /* FSU List flist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "FSU List flist"; sourceTree = BUILT_PRODUCTS_DIR; };
+		989981281E25A02B0015A67A /* list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = list.cpp; sourceTree = "<group>"; };
+		989981291E25A02B0015A67A /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
+		989981411E25A0E30015A67A /* flist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = flist.cpp; sourceTree = "<group>"; };
+		989981421E25A0E30015A67A /* mlist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mlist.cpp; sourceTree = "<group>"; };
+		989981451E25A1360015A67A /* ansicodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ansicodes.h; sourceTree = "<group>"; };
+		989981461E25A1360015A67A /* compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare.h; sourceTree = "<group>"; };
+		989981471E25A1800015A67A /* xstring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xstring.cpp; sourceTree = "<group>"; };
+		989981481E25A1800015A67A /* xstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xstring.h; sourceTree = "<group>"; };
+		9899814A1E25A1E40015A67A /* list_macro.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = list_macro.cpp; sourceTree = "<group>"; };
+		9899814B1E25A1E40015A67A /* list_sort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = list_sort.cpp; sourceTree = "<group>"; };
+		9899814E1E25A27E0015A67A /* xran.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xran.cpp; sourceTree = "<group>"; };
+		9899814F1E25A27E0015A67A /* xran.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xran.h; sourceTree = "<group>"; };
+		989981501E25A27E0015A67A /* xranxstr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xranxstr.cpp; sourceTree = "<group>"; };
+		989981511E25A27E0015A67A /* xranxstr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xranxstr.h; sourceTree = "<group>"; };
+		9899815F1E25BBF50015A67A /* FSU List mlist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "FSU List mlist"; sourceTree = BUILT_PRODUCTS_DIR; };
+		989981611E25BD4C0015A67A /* flist2c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = flist2c.cpp; sourceTree = "<group>"; };
+		989981621E25BD4C0015A67A /* mlist2c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mlist2c.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9899811B1E25A0090015A67A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9899815A1E25BBF50015A67A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		989981151E25A0090015A67A = {
+			isa = PBXGroup;
+			children = (
+				989981541E25BB360015A67A /* Support Files */,
+				989981281E25A02B0015A67A /* list.cpp */,
+				989981411E25A0E30015A67A /* flist.cpp */,
+				989981421E25A0E30015A67A /* mlist.cpp */,
+				989981291E25A02B0015A67A /* list.h */,
+				989981201E25A0090015A67A /* FSU List */,
+				9899811F1E25A0090015A67A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9899811F1E25A0090015A67A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9899811E1E25A0090015A67A /* FSU List flist */,
+				9899815F1E25BBF50015A67A /* FSU List mlist */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		989981201E25A0090015A67A /* FSU List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "FSU List";
+			sourceTree = "<group>";
+		};
+		989981541E25BB360015A67A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				989981611E25BD4C0015A67A /* flist2c.cpp */,
+				989981621E25BD4C0015A67A /* mlist2c.cpp */,
+				989981511E25A27E0015A67A /* xranxstr.h */,
+				989981501E25A27E0015A67A /* xranxstr.cpp */,
+				9899814E1E25A27E0015A67A /* xran.cpp */,
+				9899814F1E25A27E0015A67A /* xran.h */,
+				989981471E25A1800015A67A /* xstring.cpp */,
+				989981481E25A1800015A67A /* xstring.h */,
+				989981451E25A1360015A67A /* ansicodes.h */,
+				989981461E25A1360015A67A /* compare.h */,
+				9899814A1E25A1E40015A67A /* list_macro.cpp */,
+				9899814B1E25A1E40015A67A /* list_sort.cpp */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9899811D1E25A0090015A67A /* FSU List flist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 989981251E25A0090015A67A /* Build configuration list for PBXNativeTarget "FSU List flist" */;
+			buildPhases = (
+				9899811A1E25A0090015A67A /* Sources */,
+				9899811B1E25A0090015A67A /* Frameworks */,
+				9899811C1E25A0090015A67A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FSU List flist";
+			productName = "FSU List";
+			productReference = 9899811E1E25A0090015A67A /* FSU List flist */;
+			productType = "com.apple.product-type.tool";
+		};
+		989981571E25BBF50015A67A /* FSU List mlist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9899815C1E25BBF50015A67A /* Build configuration list for PBXNativeTarget "FSU List mlist" */;
+			buildPhases = (
+				989981581E25BBF50015A67A /* Sources */,
+				9899815A1E25BBF50015A67A /* Frameworks */,
+				9899815B1E25BBF50015A67A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FSU List mlist";
+			productName = "FSU List";
+			productReference = 9899815F1E25BBF50015A67A /* FSU List mlist */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		989981161E25A0090015A67A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = FSU;
+				TargetAttributes = {
+					9899811D1E25A0090015A67A = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 989981191E25A0090015A67A /* Build configuration list for PBXProject "FSU List" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 989981151E25A0090015A67A;
+			productRefGroup = 9899811F1E25A0090015A67A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9899811D1E25A0090015A67A /* FSU List flist */,
+				989981571E25BBF50015A67A /* FSU List mlist */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9899811A1E25A0090015A67A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				989981431E25A0E30015A67A /* flist.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		989981581E25BBF50015A67A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				989981601E25BC0F0015A67A /* mlist.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		989981231E25A0090015A67A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = "-I$(PROJECT_DIR)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		989981241E25A0090015A67A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CPLUSPLUSFLAGS = "-I$(PROJECT_DIR)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		989981261E25A0090015A67A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		989981271E25A0090015A67A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9899815D1E25BBF50015A67A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9899815E1E25BBF50015A67A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		989981191E25A0090015A67A /* Build configuration list for PBXProject "FSU List" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				989981231E25A0090015A67A /* Debug */,
+				989981241E25A0090015A67A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		989981251E25A0090015A67A /* Build configuration list for PBXNativeTarget "FSU List flist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				989981261E25A0090015A67A /* Debug */,
+				989981271E25A0090015A67A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9899815C1E25BBF50015A67A /* Build configuration list for PBXNativeTarget "FSU List mlist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9899815D1E25BBF50015A67A /* Debug */,
+				9899815E1E25BBF50015A67A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 989981161E25A0090015A67A /* Project object */;
+}
