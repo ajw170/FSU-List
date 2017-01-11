@@ -301,6 +301,7 @@
 		989981261E25A0090015A67A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -308,6 +309,7 @@
 		989981271E25A0090015A67A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -345,6 +347,7 @@
 				989981271E25A0090015A67A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9899815C1E25BBF50015A67A /* Build configuration list for PBXNativeTarget "FSU List mlist" */ = {
 			isa = XCConfigurationList;
