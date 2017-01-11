@@ -9,6 +9,8 @@
     (a little slower due to redundant check for allocation failure)
 
     Copyright 2016, R.C. Lacher
+ 
+    Will be modified for the other project
 */
 
 #ifndef _LIST_H
