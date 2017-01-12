@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9878854B1E2710E400A2E464 /* flist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981411E25A0E30015A67A /* flist.cpp */; };
 		989981601E25BC0F0015A67A /* mlist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981421E25A0E30015A67A /* mlist.cpp */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		987885421E270D8F00A2E464 /* list2c.api */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = list2c.api; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		987885431E270E4A00A2E464 /* list2c_macro.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = list2c_macro.cpp; sourceTree = "<group>"; };
+		9878854A1E27105A00A2E464 /* list2c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list2c.h; sourceTree = "<group>"; };
+		9878854C1E2712E800A2E464 /* list2c.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = list2c.cpp; sourceTree = "<group>"; };
 		9899811E1E25A0090015A67A /* FSU List flist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "FSU List flist"; sourceTree = BUILT_PRODUCTS_DIR; };
 		989981281E25A02B0015A67A /* list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = list.cpp; sourceTree = "<group>"; };
 		989981291E25A02B0015A67A /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
@@ -74,10 +79,16 @@
 		989981151E25A0090015A67A = {
 			isa = PBXGroup;
 			children = (
+				9878854A1E27105A00A2E464 /* list2c.h */,
+				9878854C1E2712E800A2E464 /* list2c.cpp */,
+				987885421E270D8F00A2E464 /* list2c.api */,
+				FB380CEB1E26943700FE3AB8 /* name.com */,
 				989981541E25BB360015A67A /* Support Files */,
 				989981281E25A02B0015A67A /* list.cpp */,
 				989981411E25A0E30015A67A /* flist.cpp */,
 				989981421E25A0E30015A67A /* mlist.cpp */,
+				989981611E25BD4C0015A67A /* flist2c.cpp */,
+				989981621E25BD4C0015A67A /* mlist2c.cpp */,
 				989981291E25A02B0015A67A /* list.h */,
 				989981201E25A0090015A67A /* FSU List */,
 				9899811F1E25A0090015A67A /* Products */,
@@ -103,9 +114,7 @@
 		989981541E25BB360015A67A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FB380CEB1E26943700FE3AB8 /* name.com */,
-				989981611E25BD4C0015A67A /* flist2c.cpp */,
-				989981621E25BD4C0015A67A /* mlist2c.cpp */,
+				987885431E270E4A00A2E464 /* list2c_macro.cpp */,
 				989981511E25A27E0015A67A /* xranxstr.h */,
 				989981501E25A27E0015A67A /* xranxstr.cpp */,
 				9899814E1E25A27E0015A67A /* xran.cpp */,
@@ -195,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9878854B1E2710E400A2E464 /* flist.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
