@@ -77,7 +77,10 @@ typename List<T>::Link * List<T>::NewLink (const T &t)
 template < typename T >
 void List<T>::LinkIn(typename List<T>::Link * location, typename List<T>::Link * newLink)
 {
-    /***********/
+    newLink->next_ = location; // set newLink's next pointer to location of node following head
+    newLink->prev_ = location->prev; //set newLink's prev prointer to head node
+    newLink->next_->prev_ = newLink;
+    newLink->prev_->next_ = newLink;
 }
 
 template < typename T >
@@ -199,20 +202,68 @@ List<T> * List<T>::Clone() const
 template < typename T >
 bool List<T>::PushFront (const T &t)
 {
-    /***********/
+    //Case 1: There are no excess nodes available
+    if (Excess() == 0)
+    {
+        Link * newLink = NewLink(t); //create a new link; newLink is address of new Link
+        if (newLink == nullptr) return 0; //if allocation fails
+        LinkIn(head_->next_, newLink); //insert the new link into the list after the head node
+        return 1;
+    }
+    else //Case 2: There are excess nodes available
+    {
+        head_->Tval_ = t; //set t to the T value contained in current head node
+        head_ = head_->prev_; // move head forward one node
+    }
 }
 
 //PushBack operation - inserts t at the back of the list
 template < typename T >
 bool List<T>::PushBack (const T &t)
 {
-    /***********/
+    //Case 1: There are no excess nodes available
+    if (Excess() == 0)
+    {
+        Link * newLink = newLink(t);
+        if (newLink == nullptr) return 0;
+        LinkIn(tail_,newLink);  //insert new link right before tail_ node
+        return 1;
+    }
+    else //Case 2: There are excess nodes available
+    {
+        tail_->Tval_ = t; //set t to the T value contained in tail node
+        tail_ = tail_->next_; //move tail forward 1 one
+    }
 }
 
 template < typename T >
 ListIterator<T> List<T>::Insert (ListIterator<T> i, const T &t)
 {
-    /***********/
+    //Case 1: There are no excess nodes available
+    if (Excess() == 0)
+    {
+        if (Empty()) //always insert if the list is empty
+        {
+            i = End(); //will set the iterator to "1 past back" ie the tail node
+        }
+        
+        if (!i.Valid() || i == rEnd()) //if the iterator is null or pointing to the head node
+        {
+            std::cerr << " ** cannot insert at position -1\n";
+            return End(); //returns tail position
+        }
+        Link * newLink = newLink(t);
+        if (newLink == nullptr) return 0; //problem with memory allocation
+        LinkIn(i.curr_,newLink); //insert link at specified location
+        i.curr_ = newLink; //set i to new link location
+        return i;
+    }
+    else //Case 2: There are excess nodes available
+    {
+        
+        
+    }
+    
 }
 
 template < typename T >
@@ -269,7 +320,8 @@ void List<T>::Clear()
         PopFront();
 }
 
-//Deallocate all memory except for head and tail nodes ************** come back to this to assess
+//Deallocate all memory except for head and tail nodes ************** come back to this to assess ************
+// ***********************************************************************************************************
 template < typename T >
 void List<T>::Release()
 {
