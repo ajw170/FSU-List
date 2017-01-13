@@ -86,7 +86,12 @@ void List<T>::LinkIn(typename List<T>::Link * location, typename List<T>::Link *
 template < typename T >
 typename List<T>::Link * List<T>::LinkOut(typename List<T>::Link * oldLink)
 {
-    /***********/
+    //Note: This method moves the oldLink to the end of the tail node.
+    oldLink->prev_->next_ = oldLink->next_; //set next link to previous link as link following old link
+    oldLink->next_->prev_ = oldLink->prev_; //set previous link to next link as link prior to old link
+    oldLink->prev_ = nullptr; //sets the prev_ to nullptr; will be changed later
+    oldLink->next_ = nullptr; //sets the next_ to nullptr; will be chanded late
+    return oldLink; //returns the location of oldLink (needed for other operations)
 }
 
 //Initialize a ciruclar list; note that head's next_ and prev_ pointers both point to tail
@@ -149,22 +154,13 @@ List<T>::~List ()
 {
     Release();
 }
-/********* Check on this with the circular structure ********/
 
 
-//copy constructor ********* asked on discussion board
+//copy constructor
 template < typename T >
 List<T>::List (const List<T> &x) : head_(nullptr), tail_(nullptr)
 {
-    //check to see if the list is the development version  ***need to check on this***
-    if (x.head_->Tval) //if T value is holding a valid value
-    {
-        T fillValue = x.head_->Tval;
-        Init(fillValue);  //initialize will fill value
-    }
-    else
-        Init(); //initialize normally
-    
+    Init(); //initialize normally
     Append(x); //append the list to the available nodes
 }
 
@@ -175,8 +171,6 @@ List<T>& List<T>::operator = (const List<T> &rhs) //return type List<T>& allows 
     if (this != &rhs) //first check for self assignment
     {
         Clear(); //destroy the existing list; moves head and tail pointer next to each other
-        //note - if copying an empty list, Append() will see that Begin() points to the tail, which
-        //would result in the Append not actually pushing anythign to the list
         Append(rhs); //build a copy as *this
     }
     return *this;
@@ -217,7 +211,7 @@ bool List<T>::PushFront (const T &t)
     }
 }
 
-//PushBack operation - inserts t at the back of the list
+// PushBack operation - inserts t at the back of the list
 template < typename T >
 bool List<T>::PushBack (const T &t)
 {
@@ -236,6 +230,7 @@ bool List<T>::PushBack (const T &t)
     }
 }
 
+// Insert Operation
 template < typename T >
 ListIterator<T> List<T>::Insert (ListIterator<T> i, const T &t)
 {
@@ -260,49 +255,106 @@ ListIterator<T> List<T>::Insert (ListIterator<T> i, const T &t)
     }
     else //Case 2: There are excess nodes available
     {
-        
-        
+        //change tail node to T value, then re-assign addresses
+        tail_->Tval_ = t; //set t to the T value contained in current tail node
+        tail_ = tail_ -> next_; //advance the tail node
+        Link * InsertLink = LinkOut(tail_->prev_); //obtain address of link containing newly inserted value and remove
+        InsertLink->prev_ = i.curr_->prev_; //set InsertLink's prev location.
+        InsertLink->next_ = i.curr_;  //set InsertLink's next location
+        i.curr->prev_->next_ = InsertLink;  //set previous link's next location as newly inserted link
+        i.curr->prev_ = InsertLink; //set previous location of pointed to link as location of newly inserted link
     }
-    
-}
+} // end insert
 
+// Insert operation
 template < typename T >
 ConstListIterator<T> List<T>::Insert (ConstListIterator<T> i, const T &t)
 {
-    /***********/
+    //Case 1: There are no excess nodes available
+    if (Excess() == 0)
+    {
+        if (Empty()) //always insert if the list is empty
+        {
+            i = End(); //will set the iterator to "1 past back" ie the tail node
+        }
+        
+        if (!i.Valid() || i == rEnd()) //if the iterator is null or pointing to the head node
+        {
+            std::cerr << " ** cannot insert at position -1\n";
+            return End(); //returns tail position
+        }
+        Link * newLink = newLink(t);
+        if (newLink == nullptr) return 0; //problem with memory allocation
+        LinkIn(i.curr_,newLink); //insert link at specified location
+        i.curr_ = newLink; //set i to new link location
+        return i;
+    }
+    else //Case 2: There are excess nodes available
+    {
+        //change tail node to T value, then re-assign addresses
+        tail_->Tval_ = t; //set t to the T value contained in current tail node
+        tail_ = tail_ -> next_; //advance the tail node
+        Link * InsertLink = LinkOut(tail_->prev_); //obtain address of link containing newly inserted value and remove
+        InsertLink->prev_ = i.curr_->prev_; //set InsertLink's prev location.
+        InsertLink->next_ = i.curr_;  //set InsertLink's next location
+        i.curr->prev_->next_ = InsertLink;  //set previous link's next location as newly inserted link
+        i.curr->prev_ = InsertLink; //set previous location of pointed to link as location of newly inserted link
+        i.curr_ = InsertLink; //set i's pointer to location of new link
+        return i;
+    }
 }
 
-//inserts at default location
+// Inserts at default location using End() to obtain location of last link before tail
 template < typename T >
 ListIterator<T> List<T>::Insert (const T &t)
 {
-    return Insert(End(), t);  //note that this uses const version since End() returns const iterator
+    return Insert(End(), t);
 }
 
+// Removes item in the front of the list by advancing head node
 template < typename T >
 bool List<T>::PopFront()
 {
-    /**********/
+    if (Empty()) //if the list is empty, report an error and return false
+    {
+        std::cerr << "** List error: PopFront() called on empty list\n";
+        return 0;
+    }
+    
+    head_ = head_->next_;
+    return 1; //successful
 }
 
+// Removes item in the back of the list by retreating tail node
 template < typename T >
 bool List<T>::PopBack()
 {
-    /**********/
+    if (Empty()) //if the list is empty, report an
+    {
+        std::cerr << "** List error: PopBack() called on empty list\n";
+        return 0;
+    }
+    
+    tail_ = tail_->prev_;
+    return 1; //successful
 }
 
 //Remove an item at i; note this does not delete the actual link as per Circular list implementation plan
 template < typename T >
 ListIterator<T> List<T>::Remove (ListIterator<T> i)
 {
-    /*********/
+    //ensure iterator is not pointing to null, head, tail, or a "dark side" node
+    
+    
+    
+    
 }
 
 //const version of Remove
 template < typename T >
 ConstListIterator<T> List<T>::Remove (ConstListIterator<T> i)
 {
-    /*********/
+    /* same code as above */
 }
 
 //Removes all copies of t, and returns the number of items removed
@@ -316,25 +368,26 @@ size_t List<T>::Remove (const T &t)
 template < typename T >
 void List<T>::Clear()
 {
-    while(!Empty())
-        PopFront();
+    tail_ = head_->next_; //set the tail node to be the node right after the head
 }
 
-//Deallocate all memory except for head and tail nodes ************** come back to this to assess ************
-// ***********************************************************************************************************
+
+//De-allocate entire list.  Method is used in List<T> destructor.
 template < typename T >
 void List<T>::Release()
 {
-    Clear(); //clears list, makes head and tail adjacent.
+    Clear(); //makes the head and tail adjacent
     
     //start iterator at first item after head node, iterate until it hits tail node.
-    for (Iterator i = Begin(); i != End(); ++i)
+    //*NOTE: the loop below will include deletion of the tail_ but not the head_
+    for (Iterator i = Begin(); i != rEnd(); ++i) //traverses in a circle
     {
         delete i.curr_; //de-allocate the memory reserved for the current pointed to link
     }
-    //finally, delete the head and tail nodes.
+    
+    //delete the remaining head_ node
     delete head_;
-    delete tail_;
+
 } // end release
 
 //Returns the active size of the array
@@ -462,7 +515,7 @@ void List<T>::Dump (std::ostream& os, char ofc) const
             os << *i;
             ++i; //increment the iterator
         }
-        while (i != Begin());
+        while (i != Begin()); //ouput until i hits the first element again
     }
     else
     {
@@ -595,7 +648,7 @@ ConstListIterator<T> List<T>::Includes (const T &t) const
 {
     //Note - the algorithm uses sequential search
     Iterator i; //declare iterator
-    for (i = (*this).begin; i != (*this).end; ++i)
+    for (i = Begin(); i != End(); ++i)
     {
         if (t == *i)
             return i;
@@ -618,7 +671,7 @@ ConstListIterator<T>::ConstListIterator() : curr_(nullptr)
 
 // protected constructor - create an iterator around a Link pointer; not available to client programs
 template < typename T >
-ConstListIterator<T>::ConstListIterator (typename List<T>::Link* link) : curr_(link)
+ConstListIterator<T>::ConstListIterator (typename List<T>::Link * link) : curr_(link)
 {}
 
 // copy constructor - copies the iterator
