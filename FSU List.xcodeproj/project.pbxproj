@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9831B6B21E284ACC00983596 /* flist2c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981611E25BD4C0015A67A /* flist2c.cpp */; };
 		9878854B1E2710E400A2E464 /* flist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981411E25A0E30015A67A /* flist.cpp */; };
 		989981601E25BC0F0015A67A /* mlist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981421E25A0E30015A67A /* mlist.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		9831B6AD1E284ABC00983596 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		9899811C1E25A0090015A67A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9831B6B11E284ABC00983596 /* FSU List flist2c */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "FSU List flist2c"; sourceTree = BUILT_PRODUCTS_DIR; };
 		987885421E270D8F00A2E464 /* list2c.api */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = list2c.api; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		987885431E270E4A00A2E464 /* list2c_macro.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = list2c_macro.cpp; sourceTree = "<group>"; };
 		9878854A1E27105A00A2E464 /* list2c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list2c.h; sourceTree = "<group>"; };
@@ -59,6 +70,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9831B6AC1E284ABC00983596 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9899811B1E25A0090015A67A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,6 +118,7 @@
 			children = (
 				9899811E1E25A0090015A67A /* FSU List flist */,
 				9899815F1E25BBF50015A67A /* FSU List mlist */,
+				9831B6B11E284ABC00983596 /* FSU List flist2c */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +151,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9831B6A91E284ABC00983596 /* FSU List flist2c */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9831B6AE1E284ABC00983596 /* Build configuration list for PBXNativeTarget "FSU List flist2c" */;
+			buildPhases = (
+				9831B6AA1E284ABC00983596 /* Sources */,
+				9831B6AC1E284ABC00983596 /* Frameworks */,
+				9831B6AD1E284ABC00983596 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FSU List flist2c";
+			productName = "FSU List";
+			productReference = 9831B6B11E284ABC00983596 /* FSU List flist2c */;
+			productType = "com.apple.product-type.tool";
+		};
 		9899811D1E25A0090015A67A /* FSU List flist */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 989981251E25A0090015A67A /* Build configuration list for PBXNativeTarget "FSU List flist" */;
@@ -195,11 +231,20 @@
 			targets = (
 				9899811D1E25A0090015A67A /* FSU List flist */,
 				989981571E25BBF50015A67A /* FSU List mlist */,
+				9831B6A91E284ABC00983596 /* FSU List flist2c */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9831B6AA1E284ABC00983596 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9831B6B21E284ACC00983596 /* flist2c.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9899811A1E25A0090015A67A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +264,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		9831B6AF1E284ABC00983596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9831B6B01E284ABC00983596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		989981231E25A0090015A67A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -343,6 +404,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9831B6AE1E284ABC00983596 /* Build configuration list for PBXNativeTarget "FSU List flist2c" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9831B6AF1E284ABC00983596 /* Debug */,
+				9831B6B01E284ABC00983596 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		989981191E25A0090015A67A /* Build configuration list for PBXProject "FSU List" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
