@@ -186,6 +186,7 @@ int main( int argc, char* argv[] )
   if (!BATCH) DisplayMenu(*osptr);
   // ContainerType x1, x2, x3;
   ContainerType x1(fill), x2(fill), x3(fill);
+    
   ContainerType::Iterator i0, i1, i2, i3;
   ContainerType::ConstIterator ci;
   PredicateType pred;
