@@ -67,18 +67,18 @@ namespace alt2c //required to resolve the type of list being used, as opposed to
     virtual List * Clone      () const;        // returns ptr to deep copy of this list [13]
 
     // modifying List structure - mutators
-    bool      PushFront  (const T& t);   // Insert t at front of list [3]
+    bool      PushFront  (const T& t);   // Insert t at front of list
     bool      PushBack   (const T& t);   // Insert t at back of list
-    Iterator  Insert     (Iterator i, const T& t);  // Insert t at i  [5]
+    Iterator  Insert     (Iterator i, const T& t);  // Insert t at i
     ConstIterator  Insert     (ConstIterator i, const T& t);  // ConstIterator version
-    Iterator  Insert     (const T& t);   // Insert t                  [6]
+    Iterator  Insert     (const T& t);   // Insert t
     List&     operator+= (const List& list); // append list
 
     bool      PopFront  ();              // Remove the Tval at front
     bool      PopBack   ();              // Remove the Tval at back 
-    Iterator  Remove    (Iterator i);    // Remove item at I          [7]
+    Iterator  Remove    (Iterator i);    // Remove item at I
     ConstIterator  Remove    (ConstIterator i);    // ConstIterator version
-    size_t    Remove    (const T& t);    // Remove all copies of t    [8]
+    size_t    Remove    (const T& t);    // Remove all copies of t
     void      Clear     ();              // make list empty
     void      Release   ();              // de-allocate all memory except head and tail nodes
 
@@ -92,7 +92,7 @@ namespace alt2c //required to resolve the type of list being used, as opposed to
     void      Sort      (Predicate& p);
 
     template < class Predicate > // Predicate object used to determine order
-    void      Merge     (List<T>& list, Predicate& p);   // */
+    void      Merge     (List<T>& list, Predicate& p);
 
     // information about the list - accessors [15]
     size_t    Size     () const;  // return the number of elements on the list
@@ -115,7 +115,7 @@ namespace alt2c //required to resolve the type of list being used, as opposed to
     void CheckLinks(std::ostream& os = std::cout) const;
 
     // Iterator support - locating places on the list
-    Iterator  Begin      (); // return iterator to front        [9]
+    Iterator  Begin      (); // return iterator to front
     Iterator  End        (); // return iterator "1 past the back"
     Iterator  rBegin     (); // return iterator to back
     Iterator  rEnd       (); // return iterator "1 past the front" in reverse
@@ -197,7 +197,7 @@ namespace alt2c //required to resolve the type of list being used, as opposed to
     ConstListIterator       (const ConstListIterator& ); // copy constructor
 
     // information/access
-    bool Valid         () const;  // cursor is valid element           [11]
+    bool Valid         () const;  // cursor is valid element
 
     // various operators
     bool            operator == (const ConstIterator& i2) const;
@@ -215,7 +215,7 @@ namespace alt2c //required to resolve the type of list being used, as opposed to
 
     // methods
     ConstListIterator (typename List<T>::Link * linkPtr); // type converting constructor
-    T& Retrieve () const; // conflicted Retrieve used by both versions of operator* [14]
+    T& Retrieve () const; // conflicted Retrieve used by both versions of operator*
 
     // tight couplings
     friend class List<T>;
@@ -246,7 +246,7 @@ namespace alt2c //required to resolve the type of list being used, as opposed to
     // bool       operator == (const Iterator& i2) const;
     // bool       operator != (const Iterator& i2) const;
     T&         operator *  ();       // Return reference to current Tval
-    const T&   operator *  () const; // const version                 [10]
+    const T&   operator *  () const; // const version
     Iterator&  operator =  (const Iterator& i);
     Iterator&  operator ++ ();    // prefix
     Iterator   operator ++ (int); // postfix

@@ -258,6 +258,7 @@ ListIterator<T> List<T>::Insert (ListIterator<T> i, const T &t)
     }
     else //Case 2: There are excess nodes available
     {
+        
         //change tail node to T value, then re-assign addresses
         tail_->Tval_ = t; //set t to the T value contained in current tail node
         tail_ = tail_ -> next_; //advance the tail node
@@ -428,20 +429,14 @@ void List<T>::Release()
     //start iterator at first item after head node, iterate until it hits tail node.
     //*NOTE: the loop below will include deletion of the tail_ but not the head_
     //start one after the head_, end when you reach the actual head_ to ensure entire ring is traversed
-    Link * currLink = head_->next_; //get pointer to link after head
-    while (currLink != head_)
-    {
-        Link * tmpLocation = currLink -> next_;
-        delete currLink;
-        currLink = tmpLocation;
-    }
     
-    //for (Iterator i = Begin(); i != rEnd(); ++i) //traverses in a circle
-   // {
-        //std::cout << "Entering release: traversal count:";
-        //std::cout << *i;
-   //     delete i.curr_; //de-allocate the memory reserved for the current pointed to link
-    //}
+    Link * tmpLocation = head_->next_;
+    while (tmpLocation != head_)
+    {
+        Link * tmpLocation2 = tmpLocation->next_;
+        delete tmpLocation;
+        tmpLocation = tmpLocation2;
+    }
     
     //delete the remaining head_ node
     delete head_;
@@ -661,7 +656,7 @@ ListIterator<T> List<T>::Includes (const T &t)
 {
     //Note - the algorithm uses sequential search
     Iterator i; //declare iterator
-    for (i = (*this).begin; i != (*this).end; ++i)
+    for (i = Begin(); i != End(); ++i)
     {
         if (t == *i)
             return i;
