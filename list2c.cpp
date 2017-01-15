@@ -153,6 +153,8 @@ template < typename T >
 List<T>::~List ()
 {
     Release();
+    delete head_;
+    delete tail_;
 }
 
 
@@ -170,8 +172,7 @@ List<T>& List<T>::operator = (const List<T> &rhs) //return type List<T>& allows 
 {
     if (this != &rhs) //first check for self assignment
     {
-        Clear(); //destroy the existing list; moves head and tail pointer next to each other
-        
+        Release(); //delete every node except head and tail; relink head and tail
         Append(rhs); //build a copy as *this
     }
     return *this;
@@ -415,8 +416,9 @@ size_t List<T>::Remove (const T &t)
 template < typename T >
 void List<T>::Clear()
 {
+    T tailValue = tail_->Tval_;
     tail_ = head_->next_; //set the tail node to be the node right after the head
-    //std::cout << "entered clear";
+    tail_->Tval_ = tailValue; //preserves the tail's value (for dump purposes)
 }
 
 
@@ -426,21 +428,21 @@ void List<T>::Release()
 {
     Clear(); //makes the head and tail adjacent
     
-    //start iterator at first item after head node, iterate until it hits tail node.
-    //*NOTE: the loop below will include deletion of the tail_ but not the head_
-    //start one after the head_, end when you reach the actual head_ to ensure entire ring is traversed
     
-    Link * tmpLocation = head_->next_;
+    //Delete every node except the head and tail node.
+    Link * tmpLocation = tail_->next_;  //this is the issue, will have value of first in list
+    
     while (tmpLocation != head_)
     {
         Link * tmpLocation2 = tmpLocation->next_;
         delete tmpLocation;
         tmpLocation = tmpLocation2;
     }
-    
-    //delete the remaining head_ node
-    delete head_;
-
+    //the head and tail nodes still remain; re link them
+    head_->prev_ = tail_;
+    head_->next_ = tail_;
+    tail_->next_ = head_;
+    tail_->prev_ = head_;
 } // end release
 
 //Returns the active size of the array

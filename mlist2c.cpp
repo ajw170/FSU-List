@@ -58,13 +58,13 @@ typedef char          ElementType;
 typedef fsu::Random_letter Random_class;
 const char* vT = "char";
 const char a = '1';
-const long unsigned int maxSize        =    40000;
-const long unsigned int reportInterval =   2000;
-const      unsigned int purgePercent   =       100;    // adjust these
-const      unsigned int removePercent  =      50;    // to control
-const      unsigned int insertPercent  =       50;    // growth rate
-const      unsigned int assignPercent  =        20;    // and
-const      unsigned int appendPercent  =        50;    // volatility
+const long unsigned int maxSize        =    20000;
+const long unsigned int reportInterval =   500000;
+const      unsigned int purgePercent   =       25;    // adjust these
+const      unsigned int removePercent  =      100;    // to control
+const      unsigned int insertPercent  =       70;    // growth rate
+const      unsigned int assignPercent  =        5;    // and
+const      unsigned int appendPercent  =        2;    // volatility
 // end A1 */
 
 /* // A2: makes lists of String
