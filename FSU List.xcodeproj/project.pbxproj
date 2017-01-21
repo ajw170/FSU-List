@@ -332,7 +332,7 @@
 		9844E6D81E29CA96009D25F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -340,7 +340,7 @@
 		9844E6D91E29CA96009D25F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -485,6 +485,7 @@
 				9844E6D91E29CA96009D25F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		989981191E25A0090015A67A /* Build configuration list for PBXProject "FSU List" */ = {
 			isa = XCConfigurationList;

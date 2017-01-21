@@ -62,7 +62,7 @@ const long unsigned int maxSize        =    20000;
 const long unsigned int reportInterval =   500000;
 const      unsigned int purgePercent   =       25;    // adjust these
 const      unsigned int removePercent  =      100;    // to control
-const      unsigned int insertPercent  =       70;    // growth rate
+const      unsigned int insertPercent  =       82;    // growth rate
 const      unsigned int assignPercent  =        5;    // and
 const      unsigned int appendPercent  =        2;    // volatility
 // end A1 */
