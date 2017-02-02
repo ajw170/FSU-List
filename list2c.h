@@ -57,6 +57,9 @@ namespace alt2c //required to resolve the type of list being used, as opposed to
     typedef T                                      ValueType;
     typedef ListIterator < T >                     Iterator;
     typedef ConstListIterator < T >                ConstIterator;
+    //for adapters, could say
+    // typedef ConstRAIterator< ListIterator<T> >   ConstIterator;
+      // friend class ConstRAIterator
 
     // constructors and assignment
                    List       ();              // default constructor
