@@ -81,34 +81,88 @@ void DisplayMenu(std::ostream& os = std::cout);
 void DisplayPrompt(std::ostream& os = std::cout);
 
 template < class C >
-void CopyTest( C x , std::ostream& os)
+void CopyTest( C x , std::ostream& os, bool COLOR)
 {
   os << "CopyTest:\n";
-  os << "Copied object size: " << x.Size() << '\n'
-     << "              dump: ";
-  x.Dump(os, ofc);
-  os << '\n';
+  os << "   Copied object Size: " << x.Size() << '\n'
+     << "              Display: ";
+ 
+  if (COLOR)
+  {
+    std::cout << ANSI_BOLD_BLUE;
+    x.Display(os,ofc);
+    std::cout << ANSI_RESET_ALL;
+  }
+  else
+    x.Display(os,ofc);
+  os << "\n                 Dump: ";
+  if (COLOR)
+  {
+    std::cout << ANSI_BOLD_BLUE;
+    x.Dump(os,ofc);
+    std::cout << ANSI_RESET_ALL;
+  }
+  else
+    x.Dump(os, ofc);
+  os << "           CheckLinks:\n";
+  x.CheckLinks(os);
 }
 
 template < class C >
-void AssignTest(const C& x , std::ostream& os)
+void AssignTest(const C& x , std::ostream& os, bool COLOR)
 {
   C x1;
   x1 = x;
   os << "AssignTest:\n";
-  os << "Original object size: " << x.Size() << '\n'
-            << "                dump: ";
-  x.Dump(os, ofc);
-  os << "Assignee object size: " << x1.Size() << '\n'
-            << "                dump: ";
-  x1.Dump(os, ofc);
-  os << '\n';
+  os << " Original object Size: " << x.Size() << '\n'
+     << "              Display: ";
+  if (COLOR)
+  {
+    std::cout << ANSI_BOLD_BLUE;
+    x.Display(os,ofc);
+    std::cout << ANSI_RESET_ALL;
+  }
+  else
+    x.Display(os,ofc);
+  os << "\n                 Dump: ";
+  if (COLOR)
+  {
+    std::cout << ANSI_BOLD_BLUE;
+    x.Dump(os,ofc);
+    std::cout << ANSI_RESET_ALL;
+  }
+  else
+    x.Dump(os, ofc);
+  os << " Assignee object Size: " << x1.Size() << '\n'
+     << "              Display: ";
+  if (COLOR)
+  {
+    std::cout << ANSI_BOLD_BLUE;
+    x1.Display(os,ofc);
+    std::cout << ANSI_RESET_ALL;
+  }
+  else
+    x1.Display(os,ofc);
+  os << "\n                 Dump: ";
+  if (COLOR)
+  {
+    std::cout << ANSI_BOLD_BLUE;
+    x1.Dump(os,ofc);
+    std::cout << ANSI_RESET_ALL;
+  }
+  else
+    x1.Dump(os, ofc);
+  os << "           CheckLinks:\n";
+  x1.CheckLinks(os);
 }
 
 template < class C >
 void StructureTest(const C& x , std::ostream& os)
 {
+  os << "  x1.CheckLinks()\n";
   x.CheckLinks(os);
+  os << "  x1.CheckIters()\n";
+  x.CheckIters(os);
 }
 
 void SkipDoc (std::istream& is)
@@ -186,7 +240,6 @@ int main( int argc, char* argv[] )
   if (!BATCH) DisplayMenu(*osptr);
   // ContainerType x1, x2, x3;
   ContainerType x1(fill), x2(fill), x3(fill);
-    
   ContainerType::Iterator i0, i1, i2, i3;
   ContainerType::ConstIterator ci;
   PredicateType pred;
@@ -229,7 +282,6 @@ int main( int argc, char* argv[] )
             break;
           case '!':
             if (BATCH) *osptr << '\n';
-            *osptr << "  x1.CheckLinks()\n";
             StructureTest(x1,*osptr);
             break;
           case '1':   // void PushFront (T)
@@ -336,7 +388,7 @@ int main( int argc, char* argv[] )
 	      *osptr << "  Unable to remove: i1 is invalid\n";
             break;
 
-          case 'a':
+          case 'a': case 'A':
             if (BATCH) *osptr << '\n';
             *osptr << "  ";
 	    if (x1.Empty())
@@ -347,7 +399,7 @@ int main( int argc, char* argv[] )
             *osptr << "  i1 = x1.Begin()\n";
             break;
 
-          case 'z':
+          case 'z': case 'Z':
             if (BATCH) *osptr << '\n';
             *osptr << "  ";
 	    if (x1.Empty())
@@ -464,7 +516,7 @@ int main( int argc, char* argv[] )
             *osptr << '\n';
 	    break;
 
-          case 'e':   // bool Empty()
+          case 'e': case 'E': // bool Empty()
             if (BATCH) *osptr << '\n';
             *osptr << "  ";
             *osptr << "x1 is";
@@ -786,7 +838,6 @@ int main( int argc, char* argv[] )
             break;
           case '!':
             if (BATCH) *osptr << '\n';
-            *osptr << "  x2.CheckLinks()\n";
             StructureTest(x2,*osptr);
             break;
           case '1':   // void PushFront (T)
@@ -893,7 +944,7 @@ int main( int argc, char* argv[] )
 	      *osptr << "  Unable to remove: i2 is invalid\n";
             break;
 
-          case 'a':
+          case 'a': case 'A':
             if (BATCH) *osptr << '\n';
             *osptr << "  ";
 	    if (x2.Empty())
@@ -904,7 +955,7 @@ int main( int argc, char* argv[] )
             *osptr << "  i2 = x2.Begin()\n";
             break;
 
-          case 'z':
+          case 'z': case 'Z':
             if (BATCH) *osptr << '\n';
             *osptr << "  ";
 	    if (x2.Empty())
@@ -1021,7 +1072,7 @@ int main( int argc, char* argv[] )
             *osptr << '\n';
 	    break;
 
-          case 'e':   // bool Empty()
+          case 'e': case 'E': // bool Empty()
             if (BATCH) *osptr << '\n';
             *osptr << "  ";
             *osptr << "x2 is";
@@ -1338,12 +1389,11 @@ int main( int argc, char* argv[] )
               std::cout << ANSI_RESET_ALL;
             }
             else
-            x3.Display(*osptr,ofc);
+              x3.Display(*osptr,ofc);
             *osptr << '\n';
             break;
           case '!':
             if (BATCH) *osptr << '\n';
-            *osptr << "  x3.CheckLinks()\n";
             StructureTest(x3,*osptr);
             break;
           case '1':   // void PushFront (T)
@@ -1450,7 +1500,7 @@ int main( int argc, char* argv[] )
 	      *osptr << "  Unable to remove: i3 is invalid\n";
             break;
 
-          case 'a':
+          case 'a': case 'A':
             if (BATCH) *osptr << '\n';
             *osptr << "  ";
 	    if (x3.Empty())
@@ -1461,7 +1511,7 @@ int main( int argc, char* argv[] )
             *osptr << "  i3 = x3.Begin()\n";
             break;
 
-          case 'z':
+          case 'z': case 'Z':
             if (BATCH) *osptr << '\n';
             *osptr << "  ";
 	    if (x3.Empty())
@@ -1578,7 +1628,7 @@ int main( int argc, char* argv[] )
             *osptr << '\n';
 	    break;
 
-          case 'e':   // bool Empty()
+          case 'e': case 'E': // bool Empty()
             if (BATCH) *osptr << '\n';
             *osptr << "  ";
             *osptr << "x3 is";
@@ -1881,9 +1931,8 @@ int main( int argc, char* argv[] )
 	i1 = x1.Begin();
 	i2 = x2.Begin();
 	i3 = x3.Begin();
-	CopyTest(x3,*osptr);
-	AssignTest(x3,*osptr);
-        StructureTest(x3,*osptr);
+	CopyTest(x3,*osptr,COLOR);
+	AssignTest(x3,*osptr,COLOR);
 	break;
 
       case 'm': case 'M':
@@ -1944,29 +1993,28 @@ void DisplayMenu(std::ostream& os)
        << "  PushFront  (Tval)  .....  1      PopFront   ()  .........  4\n"
        << "  PushBack   (Tval)  .....  2      PopBack    ()  .........  5\n"
        << "  Insert     (Tval)  .....  3      Remove     (Tval)  .....  6\n"
-       << "  Insert     (I,Tval)  ...  I      Remove     (I)  ........  R\n"
-       << "  Front      ()  .........  A      Back       ()  .........  Z\n"
-       << "  Empty      ()  .........  E      Size       ()  .........  S\n"
-       << "  I.Valid    ()  .........  ?      Clear      ()  .........  C\n"
+       << "  Insert     (I,Tval)  ...  I      Remove     (I)  ........  r\n"
+       << "  Front      ()  .........  a      Back       ()  .........  z\n"
+       << "  Empty      ()  .........  e      Size       ()  .........  s\n"
+       << "  I.Valid    ()  .........  ?      Clear      ()  .........  c\n"
        << "  *I         .............  *      *I = Tval  .............  ^\n"
-       << "  I = X.Begin()  .........  A      I = X.rBegin()  ........  Z\n"
+       << "  I = X.Begin()  .........  a      I = X.rBegin()  ........  z\n"
        << "  ++I  ...................  ++     --I  ...................  --\n"
        << "  Sort  ..................  <      Sort(>)  ...............  >\n"
        << "  Merge (list)  ..........  m      Merge (list,>)  ........  M\n"
        << "  Reverse  ...............  R                                 \n"
        << "  Shuffle ..................$      Structure Test .........  !\n"
-       << "  Display/Dump ...........  D      Traverse  ..............  T\n"
+       << "  Display/Dump ...........  d      Traverse  ..............  t\n"
        << "  Load data from file  ...  L      Write list to file  ....  W\n"
        << "  ------------------------------------------------------------\n"
        << "   Switch to interactive mode  ......  X\n"
        << "   operators  = , += , ==   .........  [list][op][list]\n\n"
        << "   Enter '=' alone  .................  x3 = x2 = x1;\n"
-       << "                     ................  CopyTest(x3);\n"
-       << "                      ...............  AssignTest(x3);\n"
-       << "                       ..............  StructureTest(x3);\n"
-       << "                        .............  i1 = x1.Begin();\n"
-       << "                         ............  i2 = x2.Begin();\n"
-       << "                          ...........  i3 = x3.Begin();\n"
+       << "                     ................  i1 = x1.Begin();\n"
+       << "                      ...............  i2 = x2.Begin();\n"
+       << "                       ..............  i3 = x3.Begin();\n"
+       << "                        .............  CopyTest(x3);\n"
+       << "                         ............  AssignTest(x3);\n"
        << std::endl;
 }
 

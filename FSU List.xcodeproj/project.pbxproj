@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9844E6DB1E29CAA1009D25F9 /* mlist2c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981621E25BD4C0015A67A /* mlist2c.cpp */; };
-		9844E6DF1E29DA94009D25F9 /* flist2c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981611E25BD4C0015A67A /* flist2c.cpp */; };
 		9878854B1E2710E400A2E464 /* flist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981411E25A0E30015A67A /* flist.cpp */; };
 		989981601E25BC0F0015A67A /* mlist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 989981421E25A0E30015A67A /* mlist.cpp */; };
+		FB7E85C91E4B9BA100A4FF8D /* flist2c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB7E85C81E4B9BA100A4FF8D /* flist2c.cpp */; };
+		FB7E85CB1E4B9BAF00A4FF8D /* mlist2c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB7E85CA1E4B9BAF00A4FF8D /* mlist2c.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,9 +75,9 @@
 		989981501E25A27E0015A67A /* xranxstr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xranxstr.cpp; sourceTree = "<group>"; };
 		989981511E25A27E0015A67A /* xranxstr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xranxstr.h; sourceTree = "<group>"; };
 		9899815F1E25BBF50015A67A /* FSU List mlist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "FSU List mlist"; sourceTree = BUILT_PRODUCTS_DIR; };
-		989981611E25BD4C0015A67A /* flist2c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = flist2c.cpp; sourceTree = "<group>"; };
-		989981621E25BD4C0015A67A /* mlist2c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mlist2c.cpp; sourceTree = "<group>"; };
 		FB380CEB1E26943700FE3AB8 /* name.com */ = {isa = PBXFileReference; lastKnownFileType = text; path = name.com; sourceTree = "<group>"; };
+		FB7E85C81E4B9BA100A4FF8D /* flist2c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = flist2c.cpp; sourceTree = "<group>"; };
+		FB7E85CA1E4B9BAF00A4FF8D /* mlist2c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mlist2c.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +115,8 @@
 		989981151E25A0090015A67A = {
 			isa = PBXGroup;
 			children = (
+				FB7E85CA1E4B9BAF00A4FF8D /* mlist2c.cpp */,
+				FB7E85C81E4B9BA100A4FF8D /* flist2c.cpp */,
 				9878854A1E27105A00A2E464 /* list2c.h */,
 				9878854C1E2712E800A2E464 /* list2c.cpp */,
 				987885421E270D8F00A2E464 /* list2c.api */,
@@ -123,8 +125,6 @@
 				989981281E25A02B0015A67A /* list.cpp */,
 				989981411E25A0E30015A67A /* flist.cpp */,
 				989981421E25A0E30015A67A /* mlist.cpp */,
-				989981611E25BD4C0015A67A /* flist2c.cpp */,
-				989981621E25BD4C0015A67A /* mlist2c.cpp */,
 				989981291E25A02B0015A67A /* list.h */,
 				989981201E25A0090015A67A /* FSU List */,
 				9899811F1E25A0090015A67A /* Products */,
@@ -282,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9844E6DF1E29DA94009D25F9 /* flist2c.cpp in Sources */,
+				FB7E85C91E4B9BA100A4FF8D /* flist2c.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9844E6DB1E29CAA1009D25F9 /* mlist2c.cpp in Sources */,
+				FB7E85CB1E4B9BAF00A4FF8D /* mlist2c.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -612,6 +612,46 @@ void List<T>::CheckLinks (std::ostream& os) const
     }
 }
 
+// structural integrity check - CheckIterators - adopted from list2c.api file
+template < typename T >
+void List<T>::CheckIters(std::ostream& os) const
+{
+    typename List<T>::ConstIterator i,j,k;
+    // bool ok = 1;
+    size_t n = 0;
+    for (i = this->Begin(), n = 0; i != this->End(); ++i, ++n)
+    {
+        j = i; --j; ++j;
+        k = i; ++k; --k;
+        if (!i.Valid() || !j.Valid() || !k.Valid() || i != j || i != k)
+        {
+            os << " ** forward reciprocity failure at position " << n << '\n';
+            // ok = 0;
+            break;
+        }
+    }
+    if (n != Size())
+    {
+        os << " ** Size() mismatch in forward check: count = " << n << " , size = " << Size() << '\n';
+    }
+    for (i = this->rBegin(), n = 0; i != this->rEnd(); --i, ++n)
+    {
+        j = i; --j; ++j;
+        k = i; ++k; --k;
+        if (!i.Valid() || !j.Valid() || !k.Valid() || i != j || i != k)
+        {
+            os << " ** reverse reciprocity failure at position " << n << '\n';
+            // ok = 0;
+            break;
+        }
+    }
+    if (n != Size())
+    {
+        os << " ** Size() mismatch in reverse check: count = " << n << " , size = " << Size() << '\n';
+    }
+} // CheckIters() // */
+
+
 // -- End Generic Display Methods
 
 

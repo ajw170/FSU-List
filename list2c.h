@@ -116,6 +116,7 @@ namespace alt2c //required to resolve the type of list being used, as opposed to
       
     // structural integrity check
     void CheckLinks(std::ostream& os = std::cout) const;
+    void CheckIters(std::ostream& os = std::cout) const;
 
     // Iterator support - locating places on the list
     Iterator  Begin      (); // return iterator to front

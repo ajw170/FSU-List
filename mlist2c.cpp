@@ -329,6 +329,7 @@ int main(int argc, char* argv[])
 
           case 24:
             x0.CheckLinks();
+            x0.CheckIters();
             break;
 
           case 25:
@@ -546,6 +547,7 @@ int main(int argc, char* argv[])
 
           case 24:
             x1.CheckLinks();
+            x1.CheckIters();
             break;
 
           case 25:
@@ -763,6 +765,7 @@ int main(int argc, char* argv[])
 
           case 24:
             x2.CheckLinks();
+            x2.CheckIters();
             break;
 
           case 25:
