@@ -120,6 +120,29 @@ void SkipDoc (std::istream& is)
 
 int main( int argc, char* argv[] )
 {
+    
+    /*
+    std::cout << "hello and welcome!";
+    const ContainerType a1; //declare constant list
+    ContainerType a2;
+    ContainerType::ConstIterator ai;
+    ContainerType::Iterator ai2;
+    ai = a1.Begin();
+    ai2 = a1.Begin();
+    ai2 = a2.Begin();
+    
+    a2.Insert(ai,'c');
+    *ai = 'd';
+    
+    *ai2 = 'd';
+    
+    */
+    
+    
+    
+    
+    
+    
   bool BATCH = 0;
   bool COLOR = 1;
   if (argc > 1)
